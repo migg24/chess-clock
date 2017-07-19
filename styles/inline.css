@@ -28,13 +28,13 @@ body {
     user-select: none;
 }
 
-#clock1 {
+#clock1, #clock1-settings {
     top: 0;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
 }
 
-#clock2 {
+#clock2, #clock2-settings {
     bottom: 0;
 }
 
@@ -78,4 +78,13 @@ body {
     font-size: 36px;
     justify-content: center;
     align-content: center;
+}
+
+#clock1-settings, #clock2-settings {
+    display: none;
+    padding: 20px;
+}
+
+#mode1, #mode2 {
+    width: auto;
 }

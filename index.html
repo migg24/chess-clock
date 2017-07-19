@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chess-clock</title>
-    <link rel="stylesheet" type="text/css" href="styles/inline.css">
     <link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -16,13 +17,29 @@
     <meta name="msapplication-TileColor" content="#444">
 </head>
 <body>
-    <div id="clock1" class="clock">05:00</div>
+    <div id="clock1" class="clock"></div>
+    <div id="clock1-settings" class="clock">
+        <select class="form-control" id="mode1" name="mode1">
+            <option value="0">Countdown</option>
+            <option value="1">Fischer</option>
+            <option value="2">Fischer After</option>
+            <option value="3">Bronstein</option>
+        </select>
+    </div>
     <div class="menu">
-        <i class="fa fa-cog" id="settings"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <i class="fa fa-pause" id="pause"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="fa fa-cog" id="settings"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="fa fa-pause" id="pause"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <i class="fa fa-refresh" id="reset"></i>
     </div>
-    <div id="clock2" class="clock">05:00</div>
+    <div id="clock2" class="clock"></div>
+    <div id="clock2-settings" class="clock">
+        <select class="form-control" id="mode2" name="mode2">
+            <option value="0">Countdown</option>
+            <option value="1">Fischer</option>
+            <option value="2">Fischer After</option>
+            <option value="3">Bronstein</option>
+        </select>
+    </div>
 
     <script src="scripts/moment.min.js"></script>
     <script src="scripts/app.js" async></script>

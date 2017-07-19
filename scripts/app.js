@@ -6,8 +6,8 @@
     DEFAULT: 0,
     FISCHER: 1,
     FISCHER_AFTER: 2,
-    BRONSTEIN: 3,
-    DELAY: 4
+    BRONSTEIN: 3
+    //DELAY: 4
   };
 
   function Timer($item, options) {
@@ -108,14 +108,17 @@
   var $clock2 = document.getElementById('clock2');
   var $pause = document.getElementById('pause');
   var $reset = document.getElementById('reset');
+  var $settings = document.getElementById('settings');
+  var $clock1settings = document.getElementById('clock1-settings');
+  var $clock2settings = document.getElementById('clock2-settings');
 
   var timer1 = new Timer($clock1, {
-    seconds: 3610,
+    seconds: 300,
     mode: mode.DEFAULT,
     increment: 0
   });
   var timer2 = new Timer($clock2, {
-    seconds: 5,
+    seconds: 300,
     mode: mode.DEFAULT,
     increment: 0
   });
@@ -141,6 +144,19 @@
   $reset.addEventListener('click', function() {
     if(confirm('Wirklich die Uhr zurücksetzen?')) {
       app.reset();
+    }
+  });
+  $settings.addEventListener('click', function() {
+    if ($clock1.style.display === 'none') {
+      $clock1.style.display = 'flex';
+      $clock2.style.display = 'flex';
+      $clock1settings.style.display = 'none';
+      $clock2settings.style.display = 'none';
+    } else {
+      $clock1.style.display = 'none';
+      $clock2.style.display = 'none';
+      $clock1settings.style.display = 'flex';
+      $clock2settings.style.display = 'flex';
     }
   });
 
