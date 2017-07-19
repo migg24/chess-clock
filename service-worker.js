@@ -1,4 +1,4 @@
-var cacheName = 'chess-clock-v1';
+var cacheName = 'chess-clock-v2';
 var filesToCache = [
   './',
   'index.html',
