@@ -1,5 +1,6 @@
 var cacheName = 'chess-clock-v1';
 var filesToCache = [
+  './',
   'index.html',
   'service-worker.js',
   'scripts/app.js',
