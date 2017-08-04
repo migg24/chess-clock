@@ -2,6 +2,7 @@
   'use strict';
   var precision = 50;
   var active = true;
+  var running = false;
   var mode = {
     DEFAULT: 0,
     FISCHER: 1,
@@ -111,6 +112,12 @@
   var $settings = document.getElementById('settings');
   var $clock1settings = document.getElementById('clock1-settings');
   var $clock2settings = document.getElementById('clock2-settings');
+  var $clock1duration = document.getElementById('clock1duration');
+  var $clock2duration = document.getElementById('clock2duration');
+  var $clock1increment = document.getElementById('clock1increment');
+  var $clock2increment = document.getElementById('clock2increment');
+  var $mode1 = document.getElementById('mode1');
+  var $mode2 = document.getElementById('mode2');
 
   var timer1 = new Timer($clock1, {
     seconds: 300,
@@ -147,7 +154,13 @@
     }
   });
   $settings.addEventListener('click', function() {
+    if (running) {
+      return;
+    }
+
     if ($clock1.style.display === 'none') {
+      app.applySettings();
+
       $clock1.style.display = 'flex';
       $clock2.style.display = 'flex';
       $clock1settings.style.display = 'none';
@@ -162,6 +175,11 @@
 
   var app = {
     clk: function (id) {
+      if (!running) {
+        $settings.classList.add('disabled');
+        running = true;
+      }
+
       if (id === 1) {
         if ($clock2.classList.contains('active')) {
           return;
@@ -194,12 +212,26 @@
     },
     reset: function () {
       active = true;
+      running = false;
       timer1.reset();
       timer2.reset();
+      $settings.classList.remove('disabled');
       $clock1.classList.remove('active');
       $clock2.classList.remove('active');
       $clock1.classList.remove('timedout');
       $clock2.classList.remove('timedout');
+    },
+    applySettings: function() {
+      timer1 = new Timer($clock1, {
+        seconds: parseInt($clock1duration.value) * 60,
+        mode: $mode1.value || 0,
+        increment: parseInt($clock1increment.value)
+      });
+      timer2 = new Timer($clock2, {
+        seconds: parseInt($clock2duration.value) * 60,
+        mode: $mode2.value,
+        increment: parseInt($clock2increment.value)
+      });
     }
   };
 

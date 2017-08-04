@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chess-clock</title>
     <link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css">
-    <!--<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/inline.css">
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,12 +19,29 @@
 <body>
     <div id="clock1" class="clock"></div>
     <div id="clock1-settings" class="clock">
-        <select class="form-control" id="mode1" name="mode1">
-            <option value="0">Countdown</option>
-            <option value="1">Fischer</option>
-            <option value="2">Fischer After</option>
-            <option value="3">Bronstein</option>
-        </select>
+        <div class="form-group">
+            <label for="clock1duration">Duration:</label>
+            <div class="input-group">
+                <input type="text" name="clock1duration" id="clock1duration" class="form-control" value="5" />
+                <div class="input-group-addon">min</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mode1">Mode:</label>
+            <select class="form-control" id="mode1" name="mode1">
+                <option value="0">Countdown</option>
+                <option value="1">Fischer</option>
+                <option value="2">Fischer After</option>
+                <option value="3">Bronstein</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="clock1increment">Increment:</label>
+            <div class="input-group">
+                <input type="text" name="clock1increment" id="clock1increment" class="form-control" value="5" />
+                <div class="input-group-addon">sec</div>
+            </div>
+        </div>
     </div>
     <div class="menu">
         <i class="fa fa-cog" id="settings"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -33,12 +50,29 @@
     </div>
     <div id="clock2" class="clock"></div>
     <div id="clock2-settings" class="clock">
-        <select class="form-control" id="mode2" name="mode2">
-            <option value="0">Countdown</option>
-            <option value="1">Fischer</option>
-            <option value="2">Fischer After</option>
-            <option value="3">Bronstein</option>
-        </select>
+        <div class="form-group">
+            <label for="clock2duration">Duration:</label>
+            <div class="input-group">
+                <input type="text" name="clock2duration" id="clock2duration" class="form-control" value="5" />
+                <div class="input-group-addon">min</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mode2">Mode:</label>
+            <select class="form-control" id="mode2" name="mode2">
+                <option value="0">Countdown</option>
+                <option value="1">Fischer</option>
+                <option value="2">Fischer After</option>
+                <option value="3">Bronstein</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="clock2increment">Increment:</label>
+            <div class="input-group">
+                <input type="text" name="clock2increment" id="clock2increment" class="form-control" value="5" />
+                <div class="input-group-addon">sec</div>
+            </div>
+        </div>
     </div>
 
     <script src="scripts/moment.min.js"></script>

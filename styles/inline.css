@@ -65,6 +65,10 @@ body {
     color: #FFF;
 }
 
+#settings.disabled {
+    color: #888;
+}
+
 .menu {
     display: flex;
     position: absolute;
@@ -83,6 +87,8 @@ body {
 #clock1-settings, #clock2-settings {
     display: none;
     padding: 20px;
+    font-size: 4vw;
+    text-align: left;
 }
 
 #mode1, #mode2 {
