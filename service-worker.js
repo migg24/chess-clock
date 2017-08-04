@@ -7,7 +7,7 @@ var filesToCache = [
   'scripts/moment.min.js',
   'styles/inline.css',
   'styles/font-awesome.min.css',
-  //'styles/bootstrap.min.css',
+  'styles/bootstrap.min.css',
   'fonts/fontawesome-webfont.eot?v=4.7.0',
   'fonts/fontawesome-webfont.svg?v=4.7.0',
   'fonts/fontawesome-webfont.ttf?v=4.7.0',
