@@ -224,12 +224,12 @@
     applySettings: function() {
       timer1 = new Timer($clock1, {
         seconds: parseInt($clock1duration.value) * 60,
-        mode: $mode1.value || 0,
+        mode: parseInt($mode1.value) || 0,
         increment: parseInt($clock1increment.value)
       });
       timer2 = new Timer($clock2, {
         seconds: parseInt($clock2duration.value) * 60,
-        mode: $mode2.value,
+        mode: parseInt($mode2.value) || 0,
         increment: parseInt($clock2increment.value)
       });
     }
